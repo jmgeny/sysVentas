@@ -3,6 +3,7 @@
 namespace sysventas\Http\Controllers;
 
 use Illuminate\Http\Request;
+use sysventas\Category;
 
 class CategoryController extends Controller
 {
@@ -13,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return 'Hola categoria';
+        return view('almacen.category.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return 'Estoy en create';
+        return view('almacen.category.create');
     }
 
     /**
@@ -45,7 +46,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('almacen.category.show');
     }
 
     /**
@@ -56,7 +57,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('almacen.category.edit');
     }
 
     /**
