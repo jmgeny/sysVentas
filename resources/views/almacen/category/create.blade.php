@@ -1,1 +1,6 @@
-<h1>Category Create</h1>
+@extends('layouts.admin')
+
+@section('contenedor')
+	<h1>Create</h1>
+
+@endsection

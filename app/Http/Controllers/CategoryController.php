@@ -4,6 +4,8 @@ namespace sysventas\Http\Controllers;
 
 use Illuminate\Http\Request;
 use sysventas\Category;
+use Illuminate\Support\Facade\Redirect;
+use sysventas\Http\Requests \CategoryFormRequest;
 
 class CategoryController extends Controller
 {
@@ -12,9 +14,21 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('almacen.category.index');
+        if ($request) {
+            $query=trim($request->get('searchText'));
+            $categorias=Category::where('nombre','LIKE','%'.$query.'%')
+                        ->where('status','=','1')
+                        ->orderBy('id','desc')
+                        ->paginate(6);
+            return view('almacen.category.index',['categorias' => $categorias, 
+                                                   'searchText'=> $query]);            
+
+        } 
+
+        // $categories = Category::orderBy('id','DES')->paginate(5);
+        // return view('almacen.category.index',compact('categories'));
     }
 
     /**

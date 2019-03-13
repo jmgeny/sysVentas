@@ -54,8 +54,8 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Almacen</h6>
+              <a class="dropdown-item" href="{{ url('almacen/category') }}">Categoría</a>
               <a class="dropdown-item" href="#">Artículo</a>
-              <a class="dropdown-item" href="#">Categoría</a>
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Compras</h6>
               <a class="dropdown-item" href="#">Ingresos</a>
